@@ -49,6 +49,8 @@ input {
 		// accel-profile "flat"
 		scroll-method "two-finger"
 		// disabled-on-external-mouse
+
+
 	}
 
 	mouse {
@@ -288,6 +290,7 @@ spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/mountain.jpg"
 spawn-sh-at-startup "xwayland-satellite"
 spawn-sh-at-startup "dunst"
+spawn-sh-at-startup "qs"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -549,8 +552,8 @@ binds {
 	// the cooldown-ms property. The bind will be rate-limited to this value.
 	// You can set a cooldown on any bind, but it's most useful for the wheel.
 
-	Mod+WheelScrollDown      cooldown-ms=100 { focus-workspace-down; }
-	Mod+WheelScrollUp        cooldown-ms=100 { focus-workspace-up; }
+	Mod+Alt+WheelScrollDown      cooldown-ms=100 { focus-workspace-down; }
+	Mod+Alt+WheelScrollUp        cooldown-ms=100 { focus-workspace-up; }
 	Mod+Ctrl+WheelScrollDown cooldown-ms=100 { move-column-to-workspace-down; }
 	Mod+Ctrl+WheelScrollUp   cooldown-ms=100 { move-column-to-workspace-up; }
 
@@ -563,8 +566,8 @@ binds {
 	// horizontal scrolling; these binds replicate that.
 	// Mod+Shift+WheelScrollDown      { focus-column-right; }
 	// Mod+Shift+WheelScrollUp        { focus-column-left; }
-	Mod+Alt+WheelScrollDown      { focus-column-right; }
-	Mod+Alt+WheelScrollUp        { focus-column-left; }
+	Mod+WheelScrollDown      { focus-column-right; }
+	Mod+WheelScrollUp        { focus-column-left; }
 	Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
 	Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 

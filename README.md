@@ -70,6 +70,7 @@ unzip
 xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
+xwayland-satellite
 xorg-xset
 yazi
 
