@@ -5,7 +5,10 @@ local M = {
 	config = function()
 		local harpoon = require("harpoon")
 
-		harpoon:setup()
+		harpoon:setup({
+			-- keymaps = false, -- disabling harpoon's <C-i> for <Tab>
+			keymaps = {}, -- Harpoon does tbl_extend() and expects keymaps to be a table, not boolean
+		})
 
 		vim.keymap.set("n", "<S-m>", function()
 			require("plugins.harpoon").mark_file()

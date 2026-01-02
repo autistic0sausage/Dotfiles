@@ -2,14 +2,14 @@ local M = {
 	"hrsh7th/nvim-cmp",
 	event = "InsertEnter",
 	dependencies = {
-		{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
-		{ "hrsh7th/cmp-emoji", event = "InsertEnter" },
 		{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
-		{ "hrsh7th/cmp-path", event = "InsertEnter" },
 		{ "hrsh7th/cmp-cmdline", event = "InsertEnter" },
-		{ "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
-		{ "L3MON4D3/LuaSnip", event = "InsertEnter", dependencies = { "rafamadriz/friendly-snippets" } },
+		{ "hrsh7th/cmp-emoji", event = "InsertEnter" },
+		{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
 		{ "hrsh7th/cmp-nvim-lua" },
+		{ "hrsh7th/cmp-path", event = "InsertEnter" },
+		{ "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
+        { "L3MON4D3/LuaSnip", event = "InsertEnter", dependencies = { "rafamadriz/friendly-snippets" } },
 	},
 }
 
@@ -118,6 +118,7 @@ function M.config()
 				-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 				vim_item.menu = ({
 					nvim_lsp = "[LSP]",
+					nvim_lua = "[NVIM-LUA]",
 					luasnip = "[Snippet]",
 					buffer = "[Buffer]",
 					path = "[Path]",
@@ -151,13 +152,13 @@ function M.config()
 		sources = {
 			-- { name = "copilot" },
 			{ name = "nvim_lsp" },
+            { name = "nvim_lua" },
 			{ name = "luasnip" },
 			-- { name = "cmp_tabnine" },
-			-- { name = "nvim_lua" },
 			{ name = "buffer" },
 			{ name = "path" },
-			-- { name = "calc" },
-			-- { name = "emoji" },
+			{ name = "calc" },
+			{ name = "emoji" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,

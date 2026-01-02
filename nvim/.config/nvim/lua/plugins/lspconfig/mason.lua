@@ -35,54 +35,55 @@ return {
 		-- Install formatters, and linters
 		require("mason-tool-installer").setup({
 			ensure_installed = {
+				-- Bash
+				"bash-language-server",
+				"shellcheck",
+				"shfmt",
 
-				"bashls",
-				"cssls",
-				"eslint",
-				"html",
-				"jsonls",
-				"lua_ls",
-				"marksman",
-				"prettier", -- JavaScript/TypeScript formatter
-				"shellcheck", -- Shell script linter
-				"shfmt", -- Shell script formatter
-				"stylua", -- Lua formatter
-				"tailwindcss",
-				"taplo",
-				"yamlls",
-                "alejandra",
-                "biome",
-                -- "google-java-format",
-                -- "jdtls",
-                "kdlfmt",
-                "marksman",
-                -- "vscode-spring-boot-tools",
-                "yaml-language-server",
+				-- Web
+				"css-lsp",
+				"eslint-lsp",
+				"html-lsp",
+                "prettier",
+				"typescript-language-server",
 
-
-                -- Java LSP
-				"vscode-spring-boot-tools",
+				-- Java
 				"jdtls",
-				-- "java-language-server",
 				"google-java-format",
+				"vscode-spring-boot-tools",
 
-                -- Nix language servers
-                "alejandra",
-                "nil",
+				-- Lua
+				"lua-language-server",
+				"stylua",
 
-				-- "basedpyright",
-				-- "black", -- Python formatter
-				-- "css_variables",
-				-- "cssmodules_ls",
-				-- "dockerls",
+				-- -- Nix
+				-- "nil",
+				-- "alejandra",
+
+				-- Markdown
+				"marksman",
+
+				-- XML
+				"lemminx",
+
+				-- TOML
+				"taplo",
+
+				-- YAML
+				"yaml-language-server",
+
+				-- JSON
+				"json-lsp",
+
+				-- KDL
+				"kdlfmt",
+
+				-- ----------------------------------
+				-- Optional / commented
 				-- "gopls",
-				-- "isort", -- Python import organizer
-				-- "lemminx",
-				-- "nginx_language_server",
-				-- "pylint", -- Python linter
-				-- "rust_analyzer",
-				-- "ts_ls",
-
+				-- "rust-analyzer",
+				-- "basedpyright",
+				-- "dockerfile-language-server",
 			},
 		})
 	end,

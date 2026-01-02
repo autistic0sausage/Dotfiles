@@ -1,25 +1,48 @@
 -- Enable LSP servers
+-- {mason.lua} -> installs LSPs with package/binary names
+-- {lsp.lua} -> enables LSPs with Neovim LSP server IDs
+
 vim.lsp.enable({
-	"ts_ls",
-	"lua_ls",
-	"tailwindcss",
-	"eslint",
-	"rust_analyzer",
-	"gopls",
-	"html",
-	"cssls",
-	"basedpyright",
+
+	-- Bash
 	"bashls",
-	"css_variables",
-	"cssmodules_ls",
-	"dockerls",
-	"grammarly",
-	"jsonls",
-	"lemminx",
+
+	-- Web
+	"cssls",
+	"html",
+	"eslint",
+	"ts_ls",
+
+	-- Java
+	"jdtls",
+
+	-- Lua
+	"lua_ls",
+
+	-- Nix
+	"nil_ls",
+
+	-- Markdown
 	"marksman",
-	"nginx_language_server",
+
+	-- XML
+	"lemminx",
+
+	-- TOML
 	"taplo",
+
+	-- YAML
 	"yamlls",
+
+	-- JSON
+	"jsonls",
+
+	-- ----------------------------------
+	-- Optional / commented
+	-- "gopls",
+	-- "rust_analyzer",
+	-- "basedpyright",
+	-- "dockerls",})
 })
 
 -- Configure diagnostic display with custom signs

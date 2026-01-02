@@ -18,7 +18,8 @@ return {
 				row = 0.35,
 				col = 0.50,
 				border = "rounded",
-				preview = {
+				-- preview = {
+				previewOpts = {
 					border = "border",
 					wrap = "nowrap",
 					hidden = "nohidden",
