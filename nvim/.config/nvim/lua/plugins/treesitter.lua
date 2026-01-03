@@ -2,68 +2,50 @@
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    -- event = { "BufReadPre", "BufNewFile" },
+    -- lazy = true,
     opts = {
-        require("nvim-treesitter.configs").setup {
-            -- Languages to install
-            ensure_installed = { "lua", "vim", "vimdoc", "query" },
-
-            -- Install parsers synchronously
-            sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            auto_install = true,
-
-            -- List of parsers to ignore installing
-            ignore_install = { "javascript" },
-
-            -- Modules configuration
-            highlight = {
-                enable = true,
-                disable = { "c", "rust" },
-            },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "gnn",
-                    node_incremental = "grn",
-                    scope_incremental = "grc",
-                    node_decremental = "grm",
-                },
-            },
-            indent = {
-                enable = true,
+        highlight = {
+            enable = true,
+        },
+        -- enable indentation
+        indent = { enable = true },
+        -- auto install parsers
+        auto_install = {
+            enable = true,
+        },
+        -- ensure these language parsers are installed
+        ensure_installed = {
+            "bash",
+            "css",
+            "dockerfile",
+            "gitignore",
+            "graphql",
+            "html",
+            "javascript",
+            "json",
+            "kdl",
+            "lua",
+            "markdown",
+            "markdown_inline",
+            "prisma",
+            "query",
+            "svelte",
+            "toml",
+            "tsx",
+            "typescript",
+            "vim",
+            "yaml",
+        },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "<C-space>",
+                node_incremental = "<C-space>",
+                scope_incremental = false,
+                node_decremental = "<bs>",
             },
         },
     },
 }
-
--- return {
---         'nvim-treesitter/nvim-treesitter',
---         opts = {
---             ensure_installed = {
---                 'devicetree',
---                 'lua',
---                 'sql',
---                 'go',
---                 'regex',
---                 'bash',
---                 'markdown',
---                 'markdown_inline',
---                 'yaml',
---                 'json',
---                 'jsonc',
---                 'cpp',
---                 'csv',
---                 'java',
---                 'javascript',
---                 'python',
---                 'dockerfile',
---                 'html',
---                 'css',
---                 'templ',
---                 'php',
---                 'promql',
---                 'glsl',
---             },
---         }
--- }

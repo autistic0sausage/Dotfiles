@@ -8,6 +8,11 @@ local M = {
 M.config = function()
 	require("everforest").setup({
 		-- config here
+		inverse = {
+			match_paren = true,
+			visual = false,
+			search = false,
+		}
 	})
 end
 

@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 Keymap({ desc = "Vscode Theme" }, "n", "<Space>gb", ":colorscheme vscode<CR>")
-Keymap({ desc = "Left Netrw "}, "n", "<Space>pv", "::vert leftabove Lexplore | vertical resize 30<CR>")
+Keymap({ desc = "Left Netrw " }, "n", "<Space>pv", "::vert leftabove Lexplore | vertical resize 30<CR>")
 
 -- General
 Keymap({ desc = "Leader key" }, "n", "<Space>", "")
@@ -12,7 +12,7 @@ Keymap({ desc = "Hide highlights" }, "n", "<ESC>", ":nohl<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>c", ":bp|bd #<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>q", ":q<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>w", ":w<CR>")
-Keymap({ desc = "Quit all" }, "n", "<leader>x", "<cmd>qa<CR>") -- Quit all
+Keymap({ desc = "Quit all" }, "n", "<leader>x", "<cmd>wqa<CR>") -- Quit all
 Keymap({ desc = "Toggle last open buffer" }, "n", "<Tab>", "<C-^>") -- Last open buffer
 
 -- Text
@@ -66,10 +66,11 @@ Keymap({ desc = "" }, { "n", "o", "x" }, "<s-h>", "^")
 Keymap({ desc = "" }, { "n", "o", "x" }, "<s-l>", "g_")
 
 -- better delete
-Keymap({ desc = " " }, 'n', 'db', 'vb"_d')
+Keymap({ desc = " " }, "n", "db", 'vb"_d')
 
 -- Vim formatting with =
-Keymap({ desc = " " }, 'n', '=g', 'ggVG=<C-o>')
+-- Keymap({ desc = " " }, 'n', '=g', 'ggVG=<C-o>')
+Keymap({ desc = " " }, "n", "=g", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 -- tailwind bearable to work with
 Keymap({ desc = "" }, { "n", "x" }, "j", "gj")
@@ -79,14 +80,14 @@ Keymap({ desc = "" }, "t", "<C-;", "<C-\\><C-n>")
 
 -- lazygit
 Keymap({ desc = "Open lazygit in external terminal in current path" }, "n", "<leader>gg", function()
-	local cwd = vim.fn.getcwd()
-	-- Launch Alacritty with the current directory
-	vim.fn.jobstart({ "alacritty", "--working-directory", cwd, "-e", "lazygit" }, { detach = true })
+    local cwd = vim.fn.getcwd()
+    -- Launch Alacritty with the current directory
+    vim.fn.jobstart({ "alacritty", "--working-directory", cwd, "-e", "lazygit" }, { detach = true })
 end)
 
--- alacritty
-Keymap({ desc = "Open alacritty in current path" }, "n", "<leader>te", function()
-	local cwd = vim.fn.getcwd()
-	-- Launch Alacritty with the current directory
-	vim.fn.jobstart({ "alacritty", "--working-directory", cwd }, { detach = true })
-end)
+-- -- alacritty
+-- Keymap({ desc = "Open alacritty in current path" }, "n", "<leader>new", function()
+--     local cwd = vim.fn.getcwd()
+--     -- Launch Alacritty with the current directory
+--     vim.fn.jobstart({ "alacritty", "--working-directory", cwd }, { detach = true })
+-- end)

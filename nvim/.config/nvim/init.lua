@@ -1,16 +1,16 @@
-require("autocommands.highlight-on-yank")
 -- require("autocommands.markdown-options")
+require("autocommands.highlight-on-yank")
 require("autocommands.init")
 require("core.colorschemes")
 require("core.keymaps")
+require("core.lazy")
 require("core.lsp")
 require("core.options")
+
 
 -- KEEP THIS LAST
 -- This will automatically load all the plugins in ./lua/plugins/
 -- give they respect the lazy specifications
-
-require("core.lazy")
 
 -- safety function
 -- local status_ok, _ = pcall(require, "lspconfig")
