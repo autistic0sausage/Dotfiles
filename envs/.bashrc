@@ -2,37 +2,22 @@
 ### Environment
 ### ------------------------------
 
-# Path
-export PATH="./bin:$HOME/.local/bin:$PATH"
-
 # Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 
-gitpush() {
-    git add .
-    git commit -m "."
-    git push -u origin main
-}
+# Path
+export PATH="$HOME/.local/bin:$PATH" # Prepends ~/.local/bin so your binaries override system ones. # executables in ~/.local/bin are found before system binaries.
+export PATH="$HOME/.cargo/bin:$PATH" # Rust toolchain (cargo, rustc, etc) # Makes cargo, rustc, and Cargo-installed tools available globally
+export PATH="$HOME/.npm-global/bin:$PATH"
 
-# # For QT Wayland support
-# export QT_QPA_PLATFORM=xcb
-# export QT_QPA_PLATFORM=wayland
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
-# # For Cargo/Rust support
-# export PATH="$HOME/.cargo/bin:$PATH"
-# export CARGO_HOME="$HOME/.cargo"
-# export RUSTUP_HOME="$HOME/.rustup"
-
-# # For NVIDIA Wayland support
-# export GBM_BACKEND=nvidia-drm
-# export __GLX_VENDOR_LIBRARY_NAME=nvidia
-# export WLR_NO_HARDWARE_CURSORS=1
-
-# # Optional: Force GPU acceleration
-# export __NV_PRIME_RENDER_OFFLOAD=1
-# export __VK_LAYER_NV_optimus=NVIDIA_only
+export LESS='-R --use-color'
+export LESSHISTFILE='-'
 
 ### ------------------------------
 ### Shell Behavior
@@ -45,10 +30,10 @@ case $- in *i*) ;; *) return ;; esac # only interactive shell
 
 # History
 HISTCONTROL=ignoreboth:erasedups
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=2000
+HISTFILESIZE=5000
 shopt -s histappend
-PMROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+PMOMPT_COMMAND="history -a; $PROMPT_COMMAND"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
@@ -76,13 +61,15 @@ bind 'set show-all-if-ambiguous on'
 ### ------------------------------
 
 bind 'set colored-stats on'
+bind 'set completion-map-case on '
 bind 'set completion-prefix-display-length 2'
 bind 'set completion-query-items 200'
 bind 'set mark-symlinked-directories on'
 bind 'set match-hidden-files off'
+bind 'set menu-complete-display-prefix on'
 bind 'set page-completions off'
 bind 'set show-all-if-unmodified on'
-bind 'set skip-completed-text on'
+bind 'set skip-completed-text off'
 bind 'set visible-stats on'
 
 ### ------------------------------
@@ -111,10 +98,19 @@ alias c='clear'
 alias e='exit'
 alias y='yazi'
 
-# alias cat='bat'
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
 alias mkdir='mkdir -pv'
-alias grep='grep --color=auto'
-alias cp='cp -i'
+
+# systemd
+alias list_systemctl="systemctl list-unit-files --state=enabled"
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
 alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 # alias colemak='setxkbmap us -variant colemak'
 # alias qwerty='setxkbmap us '
@@ -122,18 +118,34 @@ alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 # Config shortcuts
 # alias nvim='vim'
 alias H='nvim ~/Dotfiles/hypr/.config/hypr/hyprland.conf'
-# alias I='nvim ~/Dotfiles/i3/.config/i3/config'
-# alias N='nvim ~/.config/niri/config.kdl'
+alias I='nvim ~/.config/niri/config.kdl'
 alias N='cd ~/.config/nvim/lua/plugins && nvim .'
 alias J='cd ~/Documents/Java && nvim'
 alias Z='nvim ~/.bashrc && source ~/.bashrc'
 alias D='nvim ~/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Git
 alias gs='git status'
 alias gm='git commit -m'
 alias ga='git add'
 alias gp='git push -u origin main'
+
+gitpush() {
+    git add .
+    git commit -m "."
+    git push -u origin main
+}
 
 # Tmux
 alias tn='tmux new -s '          # new session
@@ -151,10 +163,6 @@ alias ys='yay -S'
 alias yss='yay -Ss'
 alias yrns='yay -Rns'
 
-# alias ys='paru -S'
-# alias yss='paru -Ss'
-# alias yrns='paru -Rns'
-
 # Yt-dlp
 alias yt-audio-high='yt-dlp -f "bestaudio[ext=m4a]" '
 alias yt-video-high=' yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"  '
@@ -167,18 +175,76 @@ alias to-pdf='abiword --to=pdf'
 ### Functions
 ### ------------------------------
 
+#  History search
+__fzf_history() {
+    local cmd
+    cmd=$(HISTTIMEFORMAT= history | fzf --tac --no-sort +s) || return
+    READLINE_LINE=${cmd#*[0-9]  }
+    READLINE_POINT=${#READLINE_LINE}
+}
+bind -x '"\C-r": __fzf_history'
+
 # Open files with default program
 open() { xdg-open "$@" >/dev/null 2>&1 & }
 
-# # Smart nvim (open file(s) or current dir)
-# n() { if [ $# -eq 0 ]; then nvim .; else nvim "$@"; fi; }
+# Smart nvim (open file(s) or current dir)
+n() { if [ $# -eq 0 ]; then nvim .; else nvim "$@"; fi; }
+
+# ----
+# fuzzy find packages with pacman
+pacman-ss-fzf() {
+    local pkg
+    pkg=$(
+        pacman -Ss |
+            awk '/^[^[:space:]]/ {print $1}' |
+            fzf --prompt="pacman -Ss> " \
+                --preview 'pacman -Si {}'
+    )
+
+    [[ -n $pkg ]] && READLINE_LINE+=" ${pkg#*/}"
+}
+bind -x '"\C-x\C-s": pacman-ss-fzf'
+
+# yay fuzzy search
+yay-ss-fzf() {
+    local pkg
+    pkg=$(
+        yay -Ss |
+            awk '/^[^[:space:]]/ {print $1}' |
+            fzf --prompt="yay -Ss> " \
+                --preview 'yay -Si {}'
+    )
+
+    [[ -n $pkg ]] && READLINE_LINE+=" ${pkg#*/}"
+}
+bind -x '"\C-x\C-y": yay-ss-fzf'
+# ----
 
 # Fuzzy find & preview (open in nvim on Enter)
 alias ff="fzf --preview 'bat --style=numbers --color=always {}' --bind 'enter:become(nvim {})'"
 
+# Neovim + fzf
+nd() {
+    local dir
+    dir=$(fd -t d . ~ | fzf) || return
+    cd "$dir" && nvim .
+}
+
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
+
+# Extract
+extract() {
+    case "$1" in
+    *.tar.gz | *.tgz) tar -xzf "$1" ;;
+    *.tar.bz2) tar -xjf "$1" ;;
+    *.tar.xz) tar -xJf "$1" ;;
+    *.zip) unzip "$1" ;;
+    *.7z) 7z x "$1" ;;
+    *) echo "Unknown archive: $1" ;;
+    esac
+}
 
 # Video transcoding
 transcode-video-1080p() {

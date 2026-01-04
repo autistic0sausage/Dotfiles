@@ -8,8 +8,8 @@
 
 -- Frequently Used Themes
 -- local THEME = "github_light_default"
--- local THEME = "darkplus"
-local THEME = "vscode"
+-- local THEME = "vscode"
+local THEME = "darkplus"
 
 vim.api.nvim_create_autocmd("VimEnter", {
     once = true,
