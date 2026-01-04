@@ -3,8 +3,10 @@ local Keymap = require("core.utils").Keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-Keymap({ desc = "Vscode Theme" }, "n", "<Space>gb", ":colorscheme vscode<CR>")
+-- Keymap({ desc = "Vscode Theme" }, "n", "<Space>gb", ":colorscheme darkplus<CR>")
 Keymap({ desc = "Left Netrw " }, "n", "<Space>pv", "::vert leftabove Lexplore | vertical resize 30<CR>")
+
+Keymap({ desc = "idk" }, "n", "<C-i>", "<C-i")
 
 -- General
 Keymap({ desc = "Leader key" }, "n", "<Space>", "")
@@ -29,6 +31,12 @@ Keymap({ desc = "Navigate to left window" }, "n", "<m-h>", "<C-w>h")
 Keymap({ desc = "Navigate to bottom window" }, "n", "<m-j>", "<C-w>j")
 Keymap({ desc = "Navigate to top window" }, "n", "<m-k>", "<C-w>k")
 Keymap({ desc = "Navigate to right window" }, "n", "<m-l>", "<C-w>l")
+
+-- Keymap({ desc = "Next-Quickfix window" }, "n", "<m-n>", "<cmd>cnext<cr>")
+-- Keymap({ desc = "Previous-Quickfix window" }, "n", "<m-p>", "<cmd>cprevious<cr>")
+
+Keymap({ desc = "Next-Buffer" }, "n", "<m-n>", "<cmd>bnext<cr>")
+Keymap({ desc = "Previous-Buffer" }, "n", "<m-p>", "<cmd>bprevious<cr>")
 
 -- Center when jumping around in search mode
 Keymap({}, "n", "n", "nzz")

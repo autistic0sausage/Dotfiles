@@ -70,32 +70,45 @@
 
 ---@type vim.lsp.Config
 return {
-  cmd = { 'lua-language-server' },
-  filetypes = { 'lua' },
-  root_markers = {
-    '.emmyrc.json',
-    '.luarc.json',
-    '.luarc.jsonc',
-    '.luacheckrc',
-    '.stylua.toml',
-    'stylua.toml',
-    'selene.toml',
-    'selene.yml',
-    '.git',
-  },
-  settings = {
-    Lua = {
-      codeLens = { enable = true },
-      hint = { enable = true, semicolon = 'Disable' },
-      diagnostics = {
-          global = { "vim" },
-      }
-      workspace = {
-          library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-          },
-      },
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
+    root_markers = {
+        ".emmyrc.json",
+        ".luarc.json",
+        ".luarc.jsonc",
+        ".luacheckrc",
+        ".stylua.toml",
+        "stylua.toml",
+        "selene.toml",
+        "selene.yml",
+        ".git",
     },
-  },
+    settings = {
+        Lua = {
+            codeLens = {
+                enable = false,
+            },
+            diagnostics = {
+                global = {
+                    "vim",
+                },
+            },
+            format = {
+                enable = false,
+            },
+            hint = {
+                enable = true,
+                semicolon = "Disable",
+            },
+            telemetry = {
+                enable = false,
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+                    [vim.fn.stdpath "config" .. "/lua"] = true,
+                },
+            },
+        },
+    },
 }

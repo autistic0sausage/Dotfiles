@@ -1,27 +1,27 @@
 local M = {
-	"ThePrimeagen/harpoon",
-	branch = "harpoon2",
-	dependencies = { "nvim-lua/plenary.nvim" },
-	config = function()
-		local harpoon = require("harpoon")
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+        local harpoon = require "harpoon"
 
-		harpoon:setup({
-			-- keymaps = false, -- disabling harpoon's <C-i> for <Tab>
-			keymaps = {}, -- Harpoon does tbl_extend() and expects keymaps to be a table, not boolean
-		})
+        harpoon:setup {
+            -- keymaps = false, -- disabling harpoon's <C-i> for <Tab>
+            keymaps = { "" }, -- Harpoon does tbl_extend() and expects keymaps to be a table, not boolean
+        }
 
-		vim.keymap.set("n", "<S-m>", function()
-			require("plugins.harpoon").mark_file()
-		end)
-		vim.keymap.set("n", "<Tab>", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end)
-	end,
+        vim.keymap.set("n", "<S-m>", function()
+            require("plugins.harpoon").mark_file()
+        end)
+        vim.keymap.set("n", "<Tab>", function()
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+        end)
+    end,
 }
 
 function M.mark_file()
-	require("harpoon"):list():add()
-	vim.notify("󱡅  marked file")
+    require("harpoon"):list():add()
+    vim.notify "󱡅  marked file"
 end
 
 return M

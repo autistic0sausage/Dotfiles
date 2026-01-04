@@ -10,6 +10,12 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 
+gitpush() {
+    git add .
+    git commit -m "."
+    git push -u origin main
+}
+
 # # For QT Wayland support
 # export QT_QPA_PLATFORM=xcb
 # export QT_QPA_PLATFORM=wayland
@@ -195,6 +201,6 @@ transcode-png2jpg() {
 # [[ -f ~/Dotfiles/bin/.local/bin/bash/rc ]] && source ~/Dotfiles/bin/.local/bin/bash/rc
 # . "$HOME/.cargo/env"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

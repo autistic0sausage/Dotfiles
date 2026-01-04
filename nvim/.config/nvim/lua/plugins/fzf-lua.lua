@@ -8,9 +8,9 @@ return {
         fzf.setup {
             -- "telescope",
             -- keymap = {
-            -- 	fzf = {
-            -- 		["ctrl-q"] = "select-all+accept",
-            -- 	},
+            --     fzf = {
+            --         ["ctrl-q"] = "select-all+accept",
+            --     },
             -- },
             winopts = {
                 height = 0.85,
@@ -44,8 +44,8 @@ return {
                     ["ctrl-s"] = fzf.actions.file_split,
                     ["ctrl-v"] = fzf.actions.file_vsplit,
                     ["ctrl-t"] = fzf.actions.file_tabedit,
-                    ["ctrl-q"] = fzf.actions.file_sel_to_qf,
-                    ["alt-q"] = fzf.actions.file_sel_to_ll,
+                    -- ["ctrl-q"] = fzf.actions.file_sel_to_qf,
+                    -- ["alt-q"] = fzf.actions.file_sel_to_ll,
                 },
             },
             files = {
