@@ -13,6 +13,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "8314f4c9e205e7f30b62147069729f9a1227d8bf" },
   "darkplus.nvim": { "branch": "master", "commit": "c7fff5ce62406121fc6c9e4746f118b2b2499c4c" },
+  "delete-duplicate-lines.vim": { "branch": "master", "commit": "30567abc5f671cbade716a370a3bc977938c6111" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "everforest-nvim": { "branch": "main", "commit": "557bce922401e247a596583679bc181d4d688554" },
   "fidget.nvim": { "branch": "main", "commit": "64463022a1f2ff1318ab22a2ea4125ed9313a483" },

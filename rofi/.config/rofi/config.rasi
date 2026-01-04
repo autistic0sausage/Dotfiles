@@ -1,0 +1,9 @@
+configuration  {
+    font: "Iosevka Nerd Font 13";
+    location : 0;
+    width : 50;
+    lines: 10;
+    show-icons: true;
+}
+
+
