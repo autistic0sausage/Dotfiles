@@ -1,11 +1,11 @@
+require("core.colorschemes")
+require("core.keymaps")
+require("core.options")
+require("core.lazy")
 -- require("autocommands.markdown-options")
 require("autocommands.highlight-on-yank")
 require("autocommands.init")
-require("core.colorschemes")
-require("core.keymaps")
-require("core.lazy")
 require("core.lsp")
-require("core.options")
 
 
 -- KEEP THIS LAST

@@ -11,7 +11,7 @@ Keymap({ desc = "idk" }, "n", "<C-i>", "<C-i")
 -- General
 Keymap({ desc = "Leader key" }, "n", "<Space>", "")
 Keymap({ desc = "Hide highlights" }, "n", "<ESC>", ":nohl<CR>")
-Keymap({ desc = "Close buffer" }, "n", "<leader>c", ":bp|bd #<CR>")
+-- Keymap({ desc = "Close buffer" }, "n", "<leader>c", ":bp|bd #<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>q", ":q<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>w", ":w<CR>")
 Keymap({ desc = "Quit all" }, "n", "<leader>x", "<cmd>wqa<CR>") -- Quit all
@@ -32,8 +32,8 @@ Keymap({ desc = "Navigate to bottom window" }, "n", "<m-j>", "<C-w>j")
 Keymap({ desc = "Navigate to top window" }, "n", "<m-k>", "<C-w>k")
 Keymap({ desc = "Navigate to right window" }, "n", "<m-l>", "<C-w>l")
 
--- Keymap({ desc = "Next-Quickfix window" }, "n", "<m-n>", "<cmd>cnext<cr>")
--- Keymap({ desc = "Previous-Quickfix window" }, "n", "<m-p>", "<cmd>cprevious<cr>")
+-- Keymap({ desc = "Next-Quickfix window" }, "n", "<m-w><m-n>", "<cmd>cnext<cr>")
+-- Keymap({ desc = "Previous-Quickfix window" }, "n", "<m-w><m-p>", "<cmd>cprevious<cr>")
 
 Keymap({ desc = "Next-Buffer" }, "n", "<m-n>", "<cmd>bnext<cr>")
 Keymap({ desc = "Previous-Buffer" }, "n", "<m-p>", "<cmd>bprevious<cr>")

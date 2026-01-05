@@ -1,12 +1,16 @@
+general.import = [" ~/.config/alacritty/themes/light.toml "]
+# general.import = [" ~/.config/alacritty/themes/dark.toml "]
+# general.import = ["~/.config/alacritty/color.toml"]
+
 [window]
 # opacity = 0.95
 # decorations = "Full"
 decorations = "none"
 # decorations_theme_variant = "Dark"
 
-# [window.padding]
-# x = 12 
-# y = 12 
+[window.padding]
+x = 0
+y = 0
 
 [font]
 size = 13.0
@@ -33,46 +37,21 @@ style = "Regular"
 background = "#212122"
 foreground = "#cdd6f4"
 
-# [colors.cursor]
-# text = "#000000"
-# cursor = "#ffffff"
-#
-# [colors.selection]
-# text = "CellForeground"
-# background = "#44475a"
-#
-# [colors.normal]
-# black   = "#1e1e2e"
-# red     = "#f38ba8"
-# green   = "#a6e3a1"
-# yellow  = "#f9e2af"
-# blue    = "#89b4fa"
-# magenta = "#f5c2e7"
-# cyan    = "#94e2d5"
-# white   = "#bac2de"
-#
-# [colors.bright]
-# black   = "#45475a"
-# red     = "#f38ba8"
-# green   = "#a6e3a1"
-# yellow  = "#f9e2af"
-# blue    = "#89b4fa"
-# magenta = "#f5c2e7"
-# cyan    = "#94e2d5"
-# white   = "#cdd6f4"
+# [colors.primary]
+# foreground = "#000000"
+# background = "#ffffff"
 
 [scrolling]
-history = 10000
-multiplier = 3
+history = 5000
+multiplier = 10
 
 [keyboard]
 bindings = [
-	{ key = "F11", action = "ToggleFullscreen" },
-	# { key = "V", mods = "Control|Shift", action = "Paste" },
-	# { key = "C", mods = "Control|Shift", action = "Copy" },
-	# { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" }
+  { key = "F11", action = "ToggleFullscreen" },
+  # { key = "V", mods = "Control|Shift", action = "Paste" },
+  # { key = "C", mods = "Control|Shift", action = "Copy" },
+  # { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" }
 ]
 
 [env]
 TERM = "xterm-256color"
-

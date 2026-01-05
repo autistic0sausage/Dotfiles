@@ -77,7 +77,7 @@ input {
 
 	// Focus windows and outputs automatically when moving the mouse into them.
 	// Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-	focus-follows-mouse max-scroll-amount="0%"
+	focus-follows-mouse max-scroll-amount="100%"
 	warp-mouse-to-focus
 	mod-key "Super"
 	mod-key-nested "alt"
@@ -181,8 +181,8 @@ layout {
 		// - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
 		// Color of the ring on the active monitor.
-		active-color "#7fc8ff"
-		// active-color "#FFFFFF"
+		// active-color "#7fc8ff"
+		active-color "#FFFFFF"
 		// active-color "#222222"
 
 		// Color of the ring on inactive monitors.
@@ -286,9 +286,11 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 
 spawn-sh-at-startup "wl-paste --watch cliphist store"
+spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/mountain.jpg"
+// spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/mountain.jpg"
 spawn-sh-at-startup "xwayland-satellite"
+spawn-sh-at-startup "waybar"
 spawn-sh-at-startup "dunst"
 spawn-sh-at-startup "qs"
 
@@ -406,7 +408,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-	geometry-corner-radius 15
+	geometry-corner-radius 10
 	clip-to-geometry true
 }
 
@@ -435,7 +437,7 @@ binds {
 	Super+alt+L   { spawn-sh "systemctl sleep & hyprlock" ; }
 
 	// Super+V { spawn-sh "cliphist list | rofi -dmenu cliphist decode"; }
-	Super+V { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy";}
+	Super+V { spawn-sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy";}
 
 
 	// Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

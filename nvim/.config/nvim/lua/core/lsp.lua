@@ -19,9 +19,6 @@ vim.lsp.enable {
     -- Lua
     "lua_ls",
 
-    -- Nix
-    "nil_ls",
-
     -- Markdown
     "marksman",
 
@@ -100,8 +97,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local opts = { buffer = ev.buf, silent = true }
 
         -- set keybinds
-        opts.desc = "Show LSP references"
-        keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", opts)
+        -- opts.desc = "Show LSP references"
+        -- keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", opts)
 
         opts.desc = "Go to declaration"
         keymap.set("n", "gD", vim.lsp.buf.declaration, opts)

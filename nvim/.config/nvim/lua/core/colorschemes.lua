@@ -10,6 +10,7 @@
 -- local THEME = "github_light_default"
 -- local THEME = "vscode"
 local THEME = "darkplus"
+-- local THEME = "visual_studio_code"
 
 vim.api.nvim_create_autocmd("VimEnter", {
     once = true,

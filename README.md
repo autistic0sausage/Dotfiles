@@ -58,6 +58,7 @@ noto-fonts-extra
 npm
 obs-studio
 openssh
+quickshell
 rofi
 trash-cli
 ttc-iosevka

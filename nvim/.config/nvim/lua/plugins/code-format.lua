@@ -24,9 +24,6 @@ return {
                 -- Python
                 python = { "isort", "black" },
 
-                -- Nix
-                nix = { "nil", "alejandra" },
-
                 -- Go
                 go = { "gofmt", "goimports" },
 
