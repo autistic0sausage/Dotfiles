@@ -6,6 +6,9 @@ Text {
     property color textColor: "white"
     text: FormattedTime.time
     font.weight: 600
+    // font.family: "Sans-Serif"
+    font.family: "Iosevka Nerd Font Mono"
+    // font.family: "JetBrainsMono Nerd Font"
+    font.pixelSize: Config.font_base
     color: Config.color_foreground
-    font.pointSize: Config.font_xs
 }

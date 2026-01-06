@@ -78,6 +78,9 @@ return {
 				-- KDL
 				"kdlfmt",
 
+				-- QML
+				"qmlls"
+
 				-- ----------------------------------
 				-- Optional / commented
 				-- "gopls",

@@ -18,8 +18,8 @@ Item {
         anchors.fill: parent
         spacing: 6
 
-        BarLeft {}
-        BarCenter {}
+        // BarLeft {}
+        // BarCenter {}
         BarRight {}
     }
 }

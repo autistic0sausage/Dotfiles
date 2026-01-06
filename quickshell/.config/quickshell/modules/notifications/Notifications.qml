@@ -112,6 +112,7 @@ Scope {
                                             Layout.fillWidth: true
                                             wrapMode: Text.WrapAnywhere
                                             font.pixelSize: Config.font_base
+                                            font.family: "Iosevka Nerd Font"
                                         }
                                         Text {
                                             text: notification.modelData.summary
@@ -119,6 +120,7 @@ Scope {
                                             Layout.fillWidth: true
                                             wrapMode: Text.WrapAnywhere
                                             font.pixelSize: Config.font_xl
+                                            font.family: "Iosevka Nerd Font"
                                         }
                                         Text {
                                             text: notification.modelData.body
@@ -126,6 +128,7 @@ Scope {
                                             font.pixelSize: Config.font_base
                                             Layout.fillWidth: true
                                             wrapMode: Text.WrapAnywhere
+                                            font.family: "Iosevka Nerd Font"
                                         }
                                     }
                                 }

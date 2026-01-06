@@ -10,6 +10,7 @@ RowLayout {
         id: charginBolt
         text: ""
         font.pixelSize: Config.font_xxs
+
         color: {
             var percentage = UPower.displayDevice.percentage * 100;
             if (percentage > 50)
@@ -106,6 +107,8 @@ RowLayout {
             return percentage + "%";
         }
 
+        font.family: "Iosevka Nerd Font"
+
         color: {
             var percentage = UPower.displayDevice.percentage * 100;
             if (percentage <= 10 && UPower.onBattery)
@@ -116,7 +119,7 @@ RowLayout {
         }
 
         font.pixelSize: Config.font_sm
-        font.weight: 600
+        font.weight: 700
 
         // Smooth color transitions
         Behavior on color {

@@ -288,11 +288,11 @@ layout {
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-// spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/mountain.jpg"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/beach.jpg"
 spawn-sh-at-startup "xwayland-satellite"
-spawn-sh-at-startup "waybar"
-spawn-sh-at-startup "dunst"
-spawn-sh-at-startup "qs"
+// spawn-sh-at-startup "dunst"
+// spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "qs" // replaced dunst & waybar
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -433,6 +433,7 @@ binds {
 	Super+D { spawn "discord"; }
 	Super+E { spawn "nautilus"; }
 	Super+space { spawn-sh "rofi -show drun"; }
+	Super+alt+space { spawn-sh "quickshell ipc call launcher toggle "; }
 	Super+shift+L { spawn "hyprlock"; }
 	Super+alt+L   { spawn-sh "systemctl sleep & hyprlock" ; }
 

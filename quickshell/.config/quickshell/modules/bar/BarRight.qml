@@ -8,6 +8,13 @@ Item {
     Layout.preferredHeight: Config.bar_height
     Layout.rightMargin: Config.hyprland_gap
 
+    Text {
+        // text: "This is a Text using Iosevka Font"
+        font.family: "Iosevka Nerd Font Mono"
+        font.pixelSize: Config.font_base
+        color: Config.color_foreground
+    }
+
     RowLayout {
         anchors.verticalCenter: root.verticalCenter
         anchors.right: root.right
@@ -15,9 +22,8 @@ Item {
         spacing: Config.spacing_5xl
 
         BarNotifications {}
-        BarPlayerControls {}
         BarTray {}
-        // BarBattery {}
+        BarBattery {}
         BarTime {}
     }
 }

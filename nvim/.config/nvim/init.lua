@@ -6,6 +6,8 @@ require("core.lazy")
 require("autocommands.highlight-on-yank")
 require("autocommands.init")
 require("core.lsp")
+require("lsp.lua_ls")
+require("lsp.qmlls")
 
 
 -- KEEP THIS LAST

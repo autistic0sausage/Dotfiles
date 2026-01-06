@@ -18,6 +18,9 @@ return {
                 markdown = { "prettier" },
                 graphql = { "prettier" },
 
+                -- QML
+                qml = { "qmlls" },
+
                 -- Lua
                 lua = { "stylua" },
 

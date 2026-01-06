@@ -2,8 +2,8 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-    readonly property int bar_height: 25
-    readonly property int hyprland_gap: 8
+    readonly property int bar_height: 30
+    readonly property int hyprland_gap: 0
 
     readonly property color color_transparent: "transparent"
     readonly property color color_background: "#1E1E1E"

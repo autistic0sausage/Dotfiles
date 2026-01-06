@@ -28,18 +28,24 @@ RowLayout {
         Layout.fillWidth: true
         horizontalAlignment: Text.AlignHCenter
         elide: Text.ElideRight
-        color: Config.color_foreground
-        font.pointSize: Config.font_xs
-        font.weight: 600
         text: root.trackTitle
+        // color: Config.color_foreground
+        // font.pointSize: Config.font_xs
+        // font.weight: 600
+
+        font.family: "Iosevka Nerd Font Mono"
+        font.pixelSize: Config.font_base
+        color: Config.color_foreground
     }
 
     Text {
         id: timeText
         visible: root.showTime
         color: Config.color_foreground
-        font.pointSize: Config.font_xs
-        font.weight: 600
+        font.family: "Iosevka Nerd Font Mono"
+        font.pixelSize: Config.font_base
+        // font.pointSize: Config.font_xs
+        // font.weight: 600
         text: "(" + root.timeString + ")"
     }
 }

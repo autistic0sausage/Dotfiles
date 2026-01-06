@@ -5,6 +5,7 @@ import qs.config
 
 Scope {
     id: root
+
     Variants {
         model: Quickshell.screens
 
@@ -24,6 +25,7 @@ Scope {
             BarContent {
                 id: barContent
             }
+
         }
     }
 }

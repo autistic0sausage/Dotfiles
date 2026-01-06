@@ -87,9 +87,11 @@ return {
         end, { desc = "Find files" })
 
         -- Live grep from git root or cwd
-        keymap("n", "<leader>fw", function()
+        keymap("n", "<leader>ft", function()
             fzf.live_grep { cwd = get_git_root() }
         end, { desc = "Find text" })
+
+        keymap("n", "<leader>fw", "<cmd>FzfLua grep_project<cr>", { desc = "grep project" })
 
         keymap("n", "<leader>fs", "<cmd>FzfLua lgrep_curbuf<cr>", { desc = "live grep" })
 
@@ -104,7 +106,7 @@ return {
         end, { desc = "Neovim config files" })
 
         -- Grep word under cursor from git root
-        keymap("n", "<leader>ft", function()
+        keymap("n", "<leader>fg", function()
             fzf.grep_cword { cwd = get_git_root() }
         end, { desc = "Grep word under cursor" })
 

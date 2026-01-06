@@ -34,6 +34,9 @@ vim.lsp.enable {
     -- JSON
     "jsonls",
 
+    -- QML
+    "qmlls"
+
     -- ----------------------------------
     -- Optional / commented
     -- "gopls",

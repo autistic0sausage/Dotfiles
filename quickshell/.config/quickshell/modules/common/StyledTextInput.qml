@@ -9,7 +9,7 @@ TextInput {
     selectedTextColor: Config.color_foreground
     selectionColor: Config.color_blue
     font {
-        family: "sans-serif"
+        family: "Iosevka Nerd Font"
         pixelSize: Config.font_base
         hintingPreference: Font.PreferFullHinting
     }
