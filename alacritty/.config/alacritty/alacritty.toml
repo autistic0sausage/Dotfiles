@@ -1,57 +1,33 @@
-general.import = [" ~/.config/alacritty/themes/light.toml "]
-# general.import = [" ~/.config/alacritty/themes/dark.toml "]
-# general.import = ["~/.config/alacritty/color.toml"]
+[ general ]
+# import = ["~/.config/alacritty/themes/gruvbox.toml"]
+
+[env]
+TERM = "xterm-256color"
 
 [window]
-# opacity = 0.95
-# decorations = "Full"
+opacity = 1.00
 decorations = "none"
-# decorations_theme_variant = "Dark"
 
 [window.padding]
 x = 0
 y = 0
 
 [font]
-size = 13.0
-
-# JetBrainsMono / Iosevka Nerd Font
-[font.normal]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
-[font.bold]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
-[font.italic]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
-[font.bold_italic]
-family = "Iosevka Nerd Font"
-style = "Regular"
-
+size = 11.3
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "bold_italic" }
 
 [colors.primary]
 background = "#212122"
 foreground = "#cdd6f4"
 
-# [colors.primary]
-# foreground = "#000000"
-# background = "#ffffff"
-
 [scrolling]
 history = 5000
-multiplier = 10
+multiplier = 20
 
 [keyboard]
 bindings = [
   { key = "F11", action = "ToggleFullscreen" },
-  # { key = "V", mods = "Control|Shift", action = "Paste" },
-  # { key = "C", mods = "Control|Shift", action = "Copy" },
-  # { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" }
 ]
-
-[env]
-TERM = "xterm-256color"
