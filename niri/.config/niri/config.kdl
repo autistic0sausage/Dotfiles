@@ -199,6 +199,7 @@ window-rule {
 window-rule {
 	match app-id=r#"jetbrains-idea"#
 	match title="Discord"
+	match title="Vesktop"
 	match title="Brave"
 	open-maximized true
 }
@@ -219,7 +220,8 @@ binds {
 	Super+return { spawn "alacritty"; }
 	Super+alt+return { spawn "wezterm"; }
 	Super+B { spawn "brave"; }
-	Super+D { spawn "discord"; }
+	// Super+D { spawn "discord"; }
+	Super+D { spawn "vesktop"; }
 	Super+E { spawn "nautilus"; }
 	Super+Z { spawn "freetube"; }
 	Super+V { spawn-sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy";}
