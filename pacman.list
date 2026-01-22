@@ -15,9 +15,12 @@ debugedit
 discord
 dkms
 dmenu
+dunst
 eza
 fakeroot
 fastfetch
+flameshot
+fzf
 gimp
 grub
 gtk-layer-shell
@@ -47,6 +50,7 @@ nvidia-open-lts
 nvidia-prime
 obs-studio
 obsidian
+picom
 pipewire
 pipewire-alsa
 pipewire-pulse
@@ -54,6 +58,7 @@ pkgconf
 playerctl
 polkit-gnome
 quickshell
+redshift
 ripgrep
 rofi
 sof-firmware

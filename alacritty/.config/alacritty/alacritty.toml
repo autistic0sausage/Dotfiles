@@ -19,6 +19,13 @@ bold = { family = "JetBrainsMono Nerd Font", style = "bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "bold_italic" }
 
+# [font]
+# size = 11.3
+# normal = { family = "Iosevka Nerd Font", style = "Regular" }
+# bold = { family = "Iosevka Nerd Font", style = "bold" }
+# italic = { family = "Iosevka Nerd Font", style = "italic" }
+# bold_italic = { family = "Iosevka Nerd Font", style = "bold_italic" }
+
 [colors.primary]
 background = "#212122"
 foreground = "#cdd6f4"
