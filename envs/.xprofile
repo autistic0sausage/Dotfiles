@@ -17,3 +17,12 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Cursor size (optional)
 export XCURSOR_SIZE=24
 
+# Clipboard entries
+export CM_HISTLENGTH=5000
+export CM_MAX_CLIPS=5000
+export CM_IGNORED="^$"
+
+# Default Applications
+export BROWSER=chromium
+export EDITOR=nvim
+export TERMINAL=alacritty

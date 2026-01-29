@@ -101,7 +101,7 @@ alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 alias I='nvim ~/.config/i3/config'
 alias N='cd ~/.config/nvim/lua/ && nvim .'
 alias Z='nvim ~/.bashrc && source ~/.bashrc'
-alias D='nvim ~/Dotfiles/pacman.list && ~/Dotfiles/./stow-all.sh '
+alias D='nvim ~/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -144,6 +144,8 @@ alias yt-video-low='yt-dlp -f "worstvideo+bestaudio" '
 alias yt-playlist='yt-dlp -f "bestvideo+bestaudio" '
 
 alias to-pdf='abiword --to=pdf'
+
+alias calculator='  rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n "{result}" | xclip"'
 
 
 # -- Functions -- #

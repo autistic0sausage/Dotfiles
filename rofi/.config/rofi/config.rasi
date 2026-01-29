@@ -1,9 +1,10 @@
 configuration  {
-    font: "Iosevka Nerd Font 15";
+    font: "Iosevka Nerd Font 16";
     location : 0;
     width : 50;
     lines: 10;
     show-icons: true;
+    terminal: "alacritty";
 }
 
 

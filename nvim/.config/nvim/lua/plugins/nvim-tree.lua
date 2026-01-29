@@ -1,88 +1,10 @@
--- local tree_cb = nvim_tree_config.nvim_tree_callback
 return {
-    -- "nvim-tree/nvim-tree.lua",
-    -- dependencies = {
-    --     -- "nvim-tree/nvim-web-devicons",
-    --     { "nvim-mini/mini.nvim"},
-    -- },
-    -- config = function()
-    --     local function my_on_attach(bufnr)
-    --         local api = require "nvim-tree.api"
-    --
-    --         local function opts(desc)
-    --             return {
-    --                 desc = "nvim-tree: " .. desc,
-    --                 buffer = bufnr,
-    --                 noremap = true,
-    --                 silent = true,
-    --                 nowait = true,
-    --             }
-    --         end
-    --
-    --         -- keep default mappings
-    --         api.config.mappings.default_on_attach(bufnr)
-    --
-    --         -- netrw-like navigation
-    --         vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
-    --         vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
-    --
-    --         -- optional: open in splits
-    --         -- vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
-    --         -- vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: Horizontal Split"))
-    --     end
-    --
-    --     require("nvim-tree").setup {
-    --         on_attach = my_on_attach,
-    --
-    --         update_focused_file = {
-    --             enable = true,
-    --             update_cwd = true,
-    --         },
-    --
-    --         view = {
-    --             width = 35,
-    --             side = "left",
-    --         },
-    --
-    --         renderer = {
-    --             root_folder_modifier = ":t",
-    --             icons = {
-    --                 glyphs = {
-    --                     default = "",
-    --                     symlink = "",
-    --                     folder = {
-    --                         arrow_open = "",
-    --                         arrow_closed = "",
-    --                         default = "",
-    --                         open = "",
-    --                         empty = "",
-    --                         empty_open = "",
-    --                         symlink = "",
-    --                         symlink_open = "",
-    --                     },
-    --                     git = {
-    --                         unstaged = "",
-    --                         staged = "S",
-    --                         unmerged = "",
-    --                         renamed = "➜",
-    --                         untracked = "U",
-    --                         deleted = "",
-    --                         ignored = "◌",
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --
-    --         diagnostics = {
-    --             enable = true,
-    --             show_on_dirs = true,
-    --             icons = {
-    --                 hint = "",
-    --                 info = "",
-    --                 warning = "",
-    --                 error = "",
-    --             },
-    --         },
-    --     }
-    -- end,
+    "nvim-tree/nvim-tree.lua",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+        sort = { sorter = "case_sensitive" },
+        view = { width = 36, side = "right" },
+        renderer = { group_empty = true },
+        filters = { dotfiles = false },
+    },
 }

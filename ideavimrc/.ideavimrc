@@ -89,10 +89,10 @@ nnoremap <C-d> <C-d>zz
 nnoremap db vb"_d
 
 " Vim like comments
-nnoremap gcip vip:action CommentByLineComment<CR>
-nnoremap gcap vap:action CommentByLineComment<CR>
-nnoremap gcc :action CommentByLineComment<CR>
-vnoremap gc :action CommentByLineComment<CR>
+" nnoremap gcip vip:action CommentByLineComment<CR>
+" nnoremap gcap vap:action CommentByLineComment<CR>
+" nnoremap gcc :action CommentByLineComment<CR>
+" vnoremap gc :action CommentByLineComment<CR>
 
 " File tree maneuvering
 nnoremap <leader>ne :action NewElement<CR>

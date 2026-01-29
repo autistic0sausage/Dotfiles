@@ -9,8 +9,6 @@ bluez
 bluez-utils
 brightnessctl
 btop
-calibre
-cliphist
 debugedit
 discord
 dkms
@@ -24,11 +22,9 @@ fzf
 gimp
 grub
 gtk-layer-shell
-hyprlock
 imagemagick
 jdk-openjdk
 launchy
-lazygit
 libva-nvidia-driver
 linux-lts
 luacheck
@@ -64,7 +60,6 @@ rofi
 sof-firmware
 stow
 stylua
-swaybg
 trash-cli
 ttc-iosevka
 ttf-dejavu
@@ -81,15 +76,21 @@ unzip
 vlc
 vulkan-tools
 wget
-wl-clip-persist
-wl-clipboard
 woff2-font-awesome
 xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xorg-xinit
 xorg-xset
-xwayland-satellite
 yazi
 yt-dlp
 zram-generator
+
+
+-- wayland specific
+cliphist
+hyprlock
+swaybg
+wl-clip-persist
+wl-clipboard
+xwayland-satellite
