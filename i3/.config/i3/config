@@ -2,7 +2,7 @@ set $mod Mod4
 set $alt Mod1
 set $colors -nb '#222222' -nf '#eeeeee' -sb '#cba6f7' -sf '#000000' -fn 'Iosevka Nerd Font:regular:pixelsize=19'
 
-font pango:IosevkaTerm Nerd Font 11.8
+font pango:IosevkaTerm Nerd Font 12.3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -28,12 +28,12 @@ exec --no-startup-id clipmenud &
 exec_always --no-startup-id xset r rate 200 50
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
-exec_always --no-startup-id redshift -P -O 5000
+# exec_always --no-startup-id redshift -P -O 5500
 exec_always --no-startup-id dunst &
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+b exec chromium
+bindsym $mod+b exec MOZ_ENABLE_WAYLAND=0 zen-browser
 bindsym $mod+e exec nautilus
 bindsym $mod+d exec discord
 bindsym $mod+g exec chromium --app="https://duckduckgo.com/?q=DuckDuckGo%20AI%20Chat&ia=chat&duckai=1"
@@ -160,45 +160,45 @@ bar {
 }
 
 # remove title
-for_window [class="^.*"] border pixel 1
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+for_window [class="^.*"] border pixel 3
+# for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 for_window [class="copyq"] floating enable
 for_window [class="copyq"] resize set 1000 600
 for_window [class="copyq"] move position center
 
 
 
-set $rosewater #f5e0dc
-set $flamingo  #f2cdcd
-set $pink      #f5c2e7
-set $mauve     #cba6f7
-set $red       #f38ba8
-set $maroon    #eba0ac
-set $peach     #fab387
-set $yellow    #f9e2af
-set $green     #a6e3a1
-set $teal      #94e2d5
-set $sky       #89dceb
-set $sapphire  #74c7ec
-set $blue      #89b4fa
-set $lavender  #b4befe
-set $text      #cdd6f4
-set $subtext1  #bac2de
-set $subtext0  #a6adc8
-set $overlay2  #9399b2
-set $overlay1  #7f849c
-set $overlay0  #6c7086
-set $surface2  #585b70
-set $surface1  #45475a
-set $surface0  #313244
-set $base      #1e1e2e
-set $mantle    #181825
-set $crust     #11111b
+# set $rosewater #f5e0dc
+# set $flamingo  #f2cdcd
+# set $pink      #f5c2e7
+# set $mauve     #cba6f7
+# set $red       #f38ba8
+# set $maroon    #eba0ac
+# set $peach     #fab387
+# set $yellow    #f9e2af
+# set $green     #a6e3a1
+# set $teal      #94e2d5
+# set $sky       #89dceb
+# set $sapphire  #74c7ec
+# set $blue      #89b4fa
+# set $lavender  #b4befe
+# set $text      #cdd6f4
+# set $subtext1  #bac2de
+# set $subtext0  #a6adc8
+# set $overlay2  #9399b2
+# set $overlay1  #7f849c
+# set $overlay0  #6c7086
+# set $surface2  #585b70
+# set $surface1  #45475a
+# set $surface0  #313244
+# set $base      #1e1e2e
+# set $mantle    #181825
+# set $crust     #11111b
 
-# target                 title     bg    text      indicator    border
-client.focused           $mantle   $mauve $mantle  $rosewater $mauve
-client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
-client.unfocused         $overlay0 $base  $text    $rosewater $overlay0
-client.urgent            $peach    $base  $peach   $overlay0  $peach
-client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
-client.background        $base
+# # target                 title     bg    text      indicator    border
+# client.focused           $mantle   $mauve $mantle  $rosewater $mauve
+# client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
+# client.unfocused         $overlay0 $base  $text    $rosewater $overlay0
+# client.urgent            $peach    $base  $peach   $overlay0  $peach
+# client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
+# client.background        $base
