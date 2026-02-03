@@ -93,7 +93,9 @@ Keymap({ desc = "Open lazygit in external terminal in current path" }, "n", "<le
     vim.fn.jobstart({ "alacritty", "--working-directory", cwd, "-e", "lazygit" }, { detach = true })
 end)
 
-Keymap({ desc = "NvimTreeToggle" }, "n", "\\", "<cmd>NvimTreeToggle<CR>")
+-- Keymap({ desc = "NvimTreeToggle" }, "n", "\\", "<cmd>NvimTreeToggle<CR>")
+Keymap({ desc = "NeoTree" }, "n", "\\", "<cmd>Neotree source=filesystem reveal=true position=left toggle<CR>")
+
 -- -- alacritty
 -- Keymap({ desc = "Open alacritty in current path" }, "n", "<leader>new", function()
 --     local cwd = vim.fn.getcwd()

@@ -9,3 +9,10 @@ x-scheme-handler/postman=Postman.desktop
 
 x-scheme-handler/terminal=alacritty.desktop
 application/x-terminal-emulator=alacritty.desktop
+
+
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+image/gif=org.gnome.Loupe.desktop
+image/bmp=org.gnome.Loupe.desktop
+image/tiff=org.gnome.Loupe.desktop

@@ -40,7 +40,6 @@ color_prompt=yes
 # PS1='\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\] \$ '
 PS1='\[\e[32m\][\u@\h \[\e[34m\]\W\[\e[32m\]]\[\e[0m\]\$ '
 
-
 # Key bindings
 bind 'TAB:menu-complete'             # cycle forward
 bind '"\e[Z":menu-complete-backward' # cycle backward
@@ -98,10 +97,11 @@ alias free='free -m' # show sizes in MB
 alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 
 # Config shortcuts
-alias I='nvim ~/.config/i3/config'
-alias N='cd ~/.config/nvim/lua/ && nvim .'
-alias Z='nvim ~/.bashrc && source ~/.bashrc'
-alias D='nvim ~/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
+alias D='nvim $HOME/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
+alias I='nvim $HOME/.config/i3/config'
+alias J='cd $HOME/Programming/Spring/ && nvim'
+alias N='cd $HOME/.config/nvim/lua/ && nvim'
+alias Z='nvim $HOME/.bashrc && source ~/.bashrc'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -147,7 +147,6 @@ alias to-pdf='abiword --to=pdf'
 
 alias calculator='  rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n "{result}" | xclip"'
 
-
 # -- Functions -- #
 # Open files with default program
 open() { xdg-open "$@" >/dev/null 2>&1 & }
@@ -169,6 +168,5 @@ transcode-video-4K() {
 
 # PNG → JPG (good for wallpapers)
 img2jpg() {
-  magick "$1" -quality 85 -strip "${1%.*}.jpg"
+    magick "$1" -quality 85 -strip "${1%.*}.jpg"
 }
-
