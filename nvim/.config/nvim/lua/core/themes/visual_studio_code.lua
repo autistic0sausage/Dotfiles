@@ -40,7 +40,7 @@ M.config = function()
             after = function(conf, colors, utils) end,
         },
     }
-    -- vim.cmd[[colorscheme visual_studio_code]]
+    vim.cmd[[colorscheme visual_studio_code]]
 end
 
 return M

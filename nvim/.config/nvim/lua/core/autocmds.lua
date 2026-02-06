@@ -137,6 +137,14 @@ autocmd({ "CursorHold" }, {
     end,
 })
 
+autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
+})
+
 -- -- Window navigation in sidekick_terminal buffers
 -- autocmd({ "FileType" }, {
 -- 	pattern = "sidekick_terminal",

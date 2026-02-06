@@ -39,7 +39,7 @@ M.config = function()
         transparent_mode = false,
     }
     vim.cmd "colorscheme gruvbox"
-    vim.cmd "set background=light"
+    -- vim.cmd "set background=light"
 end
 
 return M

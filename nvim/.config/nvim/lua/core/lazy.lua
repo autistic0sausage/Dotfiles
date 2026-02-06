@@ -21,11 +21,10 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 		{ import = "plugins.lspconfig" },
-		{ import = "themes" },
+		{ import = "core.themes" },
 	},
 	-- Configure any other settings here. See the documenation for more details
 	install = { colorscheme = { "habamax" } }, -- colorscheme that will be used when installing plugins
-	-- install = { colorscheme = { "gamunu/gruvbox.nvim" } },
 
 	checker = { enabled = false }, -- automatically check for plugin updates
 	change_detection = {

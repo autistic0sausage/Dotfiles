@@ -88,6 +88,8 @@ nnoremap <C-d> <C-d>zz
 " Delete word then go back (db mapping replacement)
 nnoremap db vb"_d
 
+nnoremap <leader>af A;
+
 " Vim like comments
 " nnoremap gcip vip:action CommentByLineComment<CR>
 " nnoremap gcap vap:action CommentByLineComment<CR>

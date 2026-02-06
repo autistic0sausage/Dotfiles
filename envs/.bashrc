@@ -97,11 +97,10 @@ alias free='free -m' # show sizes in MB
 alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 
 # Config shortcuts
-alias D='nvim $HOME/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
 alias I='nvim $HOME/.config/i3/config'
-alias J='cd $HOME/Programming/Spring/ && nvim'
-alias N='cd $HOME/.config/nvim/lua/ && nvim'
+alias N='nvim $HOME/user/.config/nvim/init.lua'
 alias Z='nvim $HOME/.bashrc && source ~/.bashrc'
+alias D='nvim $HOME/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"

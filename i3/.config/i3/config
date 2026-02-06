@@ -82,6 +82,12 @@ bindsym $mod+$alt+Up move up
 bindsym $mod+$alt+Right move right
 
 # move focused window
+bindsym $mod+ctrl+Left move left
+bindsym $mod+ctrl+Down move down
+bindsym $mod+ctrl+Up move up
+bindsym $mod+ctrl+Right move right
+
+# move focused window
 bindsym $mod+ctrl+h move left
 bindsym $mod+ctrl+j move down
 bindsym $mod+ctrl+k move up

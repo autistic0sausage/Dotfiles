@@ -11,7 +11,8 @@
 -- local THEME = "vscode"
 -- local THEME = "darkplus"
 -- local THEME = "visual_studio_code"
-local THEME = "kanagawa"
+-- local THEME = "kanagawa"
+local THEME = "github_dark_default"
 
 vim.api.nvim_create_autocmd("VimEnter", {
     once = true,

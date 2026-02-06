@@ -52,22 +52,12 @@ Keymap({}, "v", ">", ">gv")
 
 Keymap({}, "x", "p", [["_dP]])
 
--- -- move text up & down
--- Keymap({}, "v", "<A-j>", ":move .+1<CR>==")
--- Keymap({}, "v", "<A-k>", ":move .-3<CR>==")
-
 -- visual mode (linewise + block)
 Keymap({}, "v", "J", ":m '>+1<CR>gv=gv")
 Keymap({}, "v", "K", ":m '<-2<CR>gv=gv")
 
 -- Join lines
 Keymap({}, "n", "J", "mzJ`z")
-
--- -- move text up & down (visual block)
--- Keymap({}, "x", "<J>", ">+1<CR>gv-gv")
--- Keymap({}, "x", "<K>", "<-2<CR>gv-gv")
--- Keymap({}, "x", "<A-j>", ":move '>+1<CR>=='")
--- Keymap({}, "x", "<A-k>", ":move '<-2<CR>=='")
 
 -- more good
 Keymap({ desc = "" }, { "n", "o", "x" }, "<s-h>", "^")
@@ -85,16 +75,6 @@ Keymap({ desc = "" }, { "n", "x" }, "j", "gj")
 Keymap({ desc = "" }, { "n", "x" }, "k", "gk")
 
 Keymap({ desc = "" }, "t", "<C-;", "<C-\\><C-n>")
-
--- lazygit
-Keymap({ desc = "Open lazygit in external terminal in current path" }, "n", "<leader>gg", function()
-    local cwd = vim.fn.getcwd()
-    -- Launch Alacritty with the current directory
-    vim.fn.jobstart({ "alacritty", "--working-directory", cwd, "-e", "lazygit" }, { detach = true })
-end)
-
--- Keymap({ desc = "NvimTreeToggle" }, "n", "\\", "<cmd>NvimTreeToggle<CR>")
-Keymap({ desc = "NeoTree" }, "n", "\\", "<cmd>Neotree source=filesystem reveal=true position=left toggle<CR>")
 
 -- -- alacritty
 -- Keymap({ desc = "Open alacritty in current path" }, "n", "<leader>new", function()
