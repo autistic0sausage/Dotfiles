@@ -98,7 +98,7 @@ alias caps='xset r rate 200 50 && setxkbmap -option caps:swapescape'
 
 # Config shortcuts
 alias I='nvim $HOME/.config/i3/config'
-alias N='nvim $HOME/user/.config/nvim/init.lua'
+alias N='nvim $HOME/.config/nvim/init.lua'
 alias Z='nvim $HOME/.bashrc && source ~/.bashrc'
 alias D='nvim $HOME/Dotfiles/stow-all.sh && ~/Dotfiles/./stow-all.sh '
 
