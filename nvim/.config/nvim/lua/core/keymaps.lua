@@ -4,7 +4,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Keymap({ desc = "Vscode Theme" }, "n", "<Space>gb", ":colorscheme darkplus<CR>")
-Keymap({ desc = "Left Netrw " }, "n", "<Space>pv", "::vert leftabove Lexplore | vertical resize 30<CR>")
+-- Keymap({ desc = "Left Netrw " }, "n", "<Space>pv", "::vert leftabove Lexplore | vertical resize 35<CR>")
+Keymap({ desc = "Netrw" }, "n", "<Space>pv", ":Ex<CR>")
 
 Keymap({ desc = "idk" }, "n", "<C-i>", "<C-i")
 

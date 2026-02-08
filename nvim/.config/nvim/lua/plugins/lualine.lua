@@ -1,25 +1,25 @@
--- local M = {
---     "nvim-lualine/lualine.nvim",
---     dependencies = { "nvim-tree/nvim-web-devicons" },
--- }
---
--- M.config = function()
---     require("lualine").setup {
---         options = {
---             theme = "visual_studio_code",
---             icons_enabled = true,
---             component_separators = { left = "", right = "" },
---             section_separators = { left = "", right = "" },
---             disabled_filetypes = {},
---             globalstatus = true,
---             refresh = {
---                 statusline = 100,
---             },
---         },
---         sections = require("visual_studio_code").get_lualine_sections(),
---     }
--- end
---
--- return M
+local M = {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+}
 
-return {}
+M.config = function()
+    require("lualine").setup {
+        options = {
+            theme = "visual_studio_code",
+            icons_enabled = true,
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+            disabled_filetypes = {},
+            globalstatus = true,
+            refresh = {
+                statusline = 100,
+            },
+        },
+        sections = require("visual_studio_code").get_lualine_sections(),
+    }
+end
+
+return M
+
+-- return {}

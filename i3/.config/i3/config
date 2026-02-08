@@ -29,12 +29,12 @@ exec --no-startup-id clipmenud &
 exec_always --no-startup-id xset r rate 200 50
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf &
-exec_always --no-startup-id dunst &
-# exec_always --no-startup-id redshift -P -O 5500
+exec_always --no-startup-id redshift -P -O 5500
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+b exec MOZ_ENABLE_WAYLAND=0 zen-browser
+# bindsym $mod+b exec MOZ_ENABLE_WAYLAND=0 zen-browser
+bindsym $mod+b exec brave
 bindsym $mod+e exec nautilus
 bindsym $mod+d exec discord
 bindsym $mod+g exec chromium --app="https://duckduckgo.com/?q=DuckDuckGo%20AI%20Chat&ia=chat&duckai=1"
